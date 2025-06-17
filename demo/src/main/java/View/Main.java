@@ -752,7 +752,7 @@ public class Main extends javax.swing.JFrame {
         String password=passwordTF.getText();
         
         try{
-        int rows=Controller.DatabaseManager.addUser(name, email, password);
+        int rows=Controller.UserController.addUser(name, email, password);
         }catch(Exception e){
         
         }
@@ -767,7 +767,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name=JOptionPane.showInputDialog("Enter the Name which you want to Delete :");
         try{
-        int rows=Controller.DatabaseManager.userDelete(name);
+       int rows=Controller.UserController.userDelete(name);
         }catch(Exception e){
         e.printStackTrace();
         }
@@ -803,7 +803,7 @@ public class Main extends javax.swing.JFrame {
         String oldName=JOptionPane.showInputDialog("Enter the Old Name which you Update the new Name : ");
         String newName=JOptionPane.showInputDialog("Enter the new name :");
         try{
-        int rows=Controller.DatabaseManager.updateUser(oldName, newName);
+        int rows=Controller.UserController.updateUser(oldName, newName);
         }catch(Exception e){
         e.printStackTrace();
         }
@@ -816,7 +816,7 @@ public class Main extends javax.swing.JFrame {
         String password=LpasswordTF.getText();
         
         try{
-        int row=Controller.DatabaseManager.login(name, password);
+        int rows=Controller.LoginController.login(name, password);
         }catch(Exception e){
         e.printStackTrace();
         }
@@ -828,7 +828,7 @@ public class Main extends javax.swing.JFrame {
         String name=bookTF.getText();
         String author=authorTF.getText();
         
-        int rows=Controller.DatabaseManager.addBook(name, author);
+        int rows=Controller.BookController.addBook(name, author);
         
         
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -838,13 +838,13 @@ public class Main extends javax.swing.JFrame {
         String oldBook=JOptionPane.showInputDialog("Enter the Old Name of Book which you want to Update ");
         String newBook=JOptionPane.showInputDialog("Enter the New Name ;");
         
-        int rows=Controller.DatabaseManager.updateBook(newBook, oldBook);
+        int rows=Controller.BookController.updateBook(newBook, oldBook);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         String name=JOptionPane.showInputDialog("Enter the Book Name which you want to Delete ;");
-        int row=Controller.DatabaseManager.deleteBook(name);
+        int rows=Controller.BookController.deleteBook(name);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -861,7 +861,7 @@ public class Main extends javax.swing.JFrame {
         LocalDate returnDate=LocalDate.parse(b);
         
         try{
-        int rows=Controller.DatabaseManager.bookIssue(bookId, userId, issueDate, returnDate);
+        int rows=Controller.IssueBook_Controller.bookIssue(bookId, userId, issueDate, returnDate);
 
         }catch(Exception e){
         e.printStackTrace();
@@ -875,7 +875,7 @@ public class Main extends javax.swing.JFrame {
         String a=phonePTF.getText();
         int phone=Integer.parseInt(a);
         
-        int rows=Controller.DatabaseManager.addPublish(name, address, phone);
+      int rows=Controller.PublisherController.addPublish(name, address, phone);
         
     }//GEN-LAST:event_jButton9ActionPerformed
 
@@ -884,13 +884,13 @@ public class Main extends javax.swing.JFrame {
         String oldName=JOptionPane.showInputDialog("Enter the Old Name which you want to Update :");
         String newName=JOptionPane.showInputDialog("Enter the New Name ;");
         
-        int rows=Controller.DatabaseManager.updatePublish(oldName, newName);
+        int rows=Controller.PublisherController.updatePublish(oldName, newName);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         String name=JOptionPane.showInputDialog("Enter Name which you want to Delete Record :");
-        int rows=Controller.DatabaseManager.deletePublish(name);
+        int rows=Controller.PublisherController.deletePublish(name);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -900,7 +900,7 @@ public class Main extends javax.swing.JFrame {
         String p=phoneTF.getText();
         int phone=Integer.parseInt(p);
         
-        int rows=Controller.DatabaseManager.addAuthor(bookName, authorName, phone);
+      int rows=Controller.AuthorController.addAuthor(bookName, authorName, phone);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -908,13 +908,13 @@ public class Main extends javax.swing.JFrame {
         String oldName=JOptionPane.showInputDialog("Enter the Author Name which you want to Update");
         String newName=JOptionPane.showInputDialog("Enter the New Name ");
         
-        int rows=Controller.DatabaseManager.updateAuthor(oldName, newName);
+        int rows=Controller.AuthorController.updateAuthor(oldName, newName);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-        String name=JOptionPane.showInputDialog("Enter the Name which you want to Delete for Database");
-        int rows=Controller.DatabaseManager.deleteAuthor(name);
+         // TODO add your handling code here:
+        String name=JOptionPane.showInputDialog("Enter the Author Name which you want to Delete for Database");
+        int rows=Controller.AuthorController.deleteAuthor(name);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     /**
